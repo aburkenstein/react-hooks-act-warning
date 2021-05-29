@@ -1,0 +1,37 @@
+{
+  "rootDir": ".",
+  "testMatch": ["<rootDir>/app/**/?(*.)(spec).{js,jsx,ts,tsx}"],
+  "preset": "react-native",
+  "moduleFileExtensions": ["ts", "tsx", "js", "tsx", "json", "node"],
+  "reporters": ["default", "jest-junit"],
+  "setupFiles": ["./jest.setup.ts"],
+  "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
+  "verbose": true,
+  "transformIgnorePatterns": [
+    "node_modules/(?!(jest-)?react-native|react-navigation|deep-links|@react-native-community)",
+    "node_modules/(?!(jest-)?|react-native-localize|react-native-progress|react-native-gesture-handler)"
+  ],
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "**/*.{js,jsx,ts,tsx}",
+    "!**/node_modules/**",
+    "!**/*.spec.{ts,tsx}",
+    "!**/*.stories.{js,ts,jsx,tsx}",
+    "!**/test/**"
+  ],
+  "coverageReporters": ["json", "lcov", "text-summary"],
+  "coverageThreshold": {
+    "global": {
+      "statements": 9,
+      "branches": 6,
+      "lines": 9,
+      "functions": 6.5
+    },
+    "./app/lib/": {
+      "statements": 25,
+      "branches": 20,
+      "lines": 25,
+      "functions": 25
+    }
+  }
+}

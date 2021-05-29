@@ -1,0 +1,23 @@
+{
+  "presets": ["module:metro-react-native-babel-preset", "@babel/preset-typescript"],
+  "plugins": [
+    "transform-inline-environment-variables",
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "extensions": [".js", ".tsx", ".ts", ".png", ".ios.js", ".android.js"],
+        "alias": {
+          "features": "./app/features"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "babel-plugin-dynamic-import-node"
+      ]
+    }
+  }
+}
